@@ -1,3 +1,4 @@
+const {time} = require('console');
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -22,6 +23,15 @@ app.get('/', (_, res) => {
 app.get("/sobre", (_, res) => {
     res.render('layout', { title: "Sobre", page: "sobre" })
 });
+
+// Rota compra confirmada
+app.get('/confirmada', (_, res) => {
+    res.render('layout', { title: 'compra comfirmada', page: 'confirmada' })
+})
+
+app.get('/cancelada', (_, res) => {
+    res.render('layout', { title: 'compra cancelada', page: 'cancelada' })
+})
 
 // Iniciar o servidor
 app.listen(port, () => {
