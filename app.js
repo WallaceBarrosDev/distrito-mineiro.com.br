@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const {title} = require('process');
 const app = express();
 const port = 3000;
 
@@ -14,14 +13,14 @@ app.set('views', path.join(__dirname, 'src/views'));
 // Middleware para arquivos estáticos (CSS, JS, imagens)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Rota main
+// Rota m: ain
 app.get('/', (_, res) => {
-    res.render('index', {title: "home", page: "pages/home" })
+    res.render('layout', {title: "Home", page: "home" })
 });
 
 // Rota sobre
 app.get("/sobre", (_, res) => {
-    res.render('index', { title: "sobre", page: "pages/sobre" })
+    res.render('layout', { title: "Sobre", page: "sobre" })
 });
 
 // Iniciar o servidor
